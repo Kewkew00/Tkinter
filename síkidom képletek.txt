@@ -1,0 +1,31 @@
+Háromszög 
+-terület: a*magasság/2
+-kerület: a+b+c
+
+Trapéz
+-terület: (a+c)*magasság/2
+-kerület: a+b+c+d
+
+Paralelogramma
+-terület: a*magasság
+-kerület: 2*(a+b)
+
+Téglalap
+-terület: a*b
+-kerület: 2*(a+b)
+
+Deltoid 
+-terület: (a+b) *2
+-kerület: e*f/2
+
+Rombusz 
+-terület: a*magasság
+-kerület: 4*a
+
+Négyzet 
+-terület: a*a
+-kerület: 4*a
+
+Kör 
+-terület: pi*sugár a négyzeten
+-kerület: 2*pi*sugár
