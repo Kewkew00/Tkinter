@@ -12,7 +12,14 @@ menusor.pack(side = TOP, fill = X)
 
 def haromszogterulet():
 
+    s = ''
+
     def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
 
         a = eval(mezo1.get())
         m = eval(mezo2.get())
@@ -86,6 +93,100 @@ def haromszogkerulet():
     mezo4.grid(row = 5, column = 2, sticky = W)
     ablak3.mainloop()
 
+def trapezterulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
+        a = eval(mezo1.get())
+        c = eval(mezo2.get())
+        m = eval(mezo3.get())
+        terulet = (a+c)*m/2
+
+        if a <= 0 or m <= 0 or c <= 0:
+            mezo4.delete(0, END)
+            mezo4.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+        else:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str(terulet))
+
+    ablak3 =Toplevel(foablak)
+    ablak3.title('A téglatest területe')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'a(cm):')
+    szoveg2 = Label(ablak3, text = 'c(cm):')
+    szoveg3 = Label(ablak3, text = 'magasság(cm):')
+    szoveg4 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    mezo3 = Entry(ablak3)
+    mezo4 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 2)
+    szoveg3.grid(row = 3)
+    szoveg4.grid(row = 5)
+    gomb1.grid(row = 4, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 2, column = 2, sticky = W)
+    mezo3.grid(row = 3, column = 2, sticky = W)
+    mezo4.grid(row = 5, column = 2, sticky = W)
+    ablak3.mainloop()
+
+def trapezkerulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
+        a = eval(mezo1.get())
+        b = eval(mezo2.get())
+        c = eval(mezo3.get())
+        d = eval(mezo5.get())
+        kerulet = a+b+c+d
+
+        if a <= 0 or b <= 0 or c <= 0 or d <= 0:
+            mezo4.delete(0, END)
+            mezo4.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+        else:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str(kerulet))
+
+    ablak3 =Toplevel(foablak)
+    ablak3.title('A téglatest területe')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'a(cm):')
+    szoveg2 = Label(ablak3, text = 'b(cm):')
+    szoveg3 = Label(ablak3, text = 'c(cm):')
+    szoveg5 = Label(ablak3, text = 'd(cm):')
+    szoveg4 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    mezo3 = Entry(ablak3)
+    mezo5 = Entry(ablak3)
+    mezo4 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 2)
+    szoveg3.grid(row = 3)
+    szoveg5.grid(row = 4)
+    szoveg4.grid(row = 6)
+    gomb1.grid(row = 5, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 2, column = 2, sticky = W)
+    mezo3.grid(row = 3, column = 2, sticky = W)
+    mezo5.grid(row = 4, column = 2, sticky = W)
+    mezo4.grid(row = 6, column = 2, sticky = W)
+    ablak3.mainloop()
 
 #file
 def nevjegy():
@@ -112,6 +213,15 @@ haromszog.add_command(label = 'Terület', command = haromszogterulet)
 haromszog.add_command(label = 'Kerület', command = haromszogkerulet)
 menu1.config(menu = haromszog)
 #háromszög menü
+
+#trapéz menü
+menu3 = Menubutton(menusor, text = 'Trapéz')
+menu3.pack(side = LEFT)
+trapez = Menu(menu3)
+trapez.add_command(label = 'Terület', command = trapezterulet)
+trapez.add_command(label = 'Kerület', command = trapezkerulet)
+menu3.config(menu = trapez)
+#trapéz menü
 
 
 foablak.mainloop()
