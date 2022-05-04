@@ -2,7 +2,7 @@
 - By:  Tarr Gábor, Juhász Gábor, Csanádi Kevin
 
 ## Főoldal
-- A főoldal egy ablak,melyen meg lehet találni egy "Fájl" menü és különböző Síkidomok menüi.
+- A főoldal egy ablak,melyen meg lehet találni egy "Fájl" menü és különböző Síkidomok menüit.
 - A Fájl menüben találhatók a következők:
   -Névjegy
   -Kilépés
