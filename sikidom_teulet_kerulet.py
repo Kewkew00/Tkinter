@@ -263,6 +263,76 @@ def rombuszkerulet():
     mezo3.grid(row = 3, column = 2, sticky = W)
     ablak3.mainloop()
 
+def negyzetterulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo3.delete(0, END)
+            mezo3.insert(0, str()+ 'A számításhoz számadat kell')
+
+        a = eval(mezo1.get())
+        terulet = a*a
+
+        if a <= 0:
+            mezo3.delete(0, END)
+            mezo3.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+        else:
+            mezo3.delete(0, END)
+            mezo3.insert(0, str(terulet))
+
+    ablak3 =Toplevel(foablak)
+    ablak3.title('A négyzet területe')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'a(cm):')
+    szoveg3 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo3 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg3.grid(row = 3)
+    gomb1.grid(row = 4, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo3.grid(row = 3, column = 2, sticky = W)
+    ablak3.mainloop()
+
+def negyzetkerulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo3.delete(0, END)
+            mezo3.insert(0, str()+ 'A számításhoz számadat kell')
+
+        a = eval(mezo1.get())
+        terulet = 4*a
+
+        if a <= 0:
+            mezo3.delete(0, END)
+            mezo3.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+        else:
+            mezo3.delete(0, END)
+            mezo3.insert(0, str(terulet))
+
+    ablak3 =Toplevel(foablak)
+    ablak3.title('A négyzet kerülete')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'a(cm):')
+    szoveg3 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo3 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg3.grid(row = 3)
+    gomb1.grid(row = 4, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo3.grid(row = 3, column = 2, sticky = W)
+    ablak3.mainloop()
+
 #file
 def nevjegy():
     ablak2 = Toplevel(foablak)
@@ -306,5 +376,14 @@ rombusz.add_command(label = 'Terület', command = rombuszterulet)
 rombusz.add_command(label = 'Kerület', command = rombuszkerulet)
 menu4.config(menu = rombusz)
 #rombusz menü
+
+#négyzet menü
+menu5 = Menubutton(menusor, text = 'Négyzet')
+menu5.pack(side = LEFT)
+negyzet = Menu(menu5)
+negyzet.add_command(label = 'Terület', command = negyzetterulet)
+negyzet.add_command(label = 'Kerület', command = negyzetkerulet)
+menu5.config(menu = negyzet)
+#négyzet menü
 
 foablak.mainloop()
