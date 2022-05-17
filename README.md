@@ -29,8 +29,20 @@
 - Főablak elkezdése.
 
 ## 04.27
-- A főablak befejezése, illetve a háromszög menü hozzáadása a menüsorhoz.
+- A főablak befejezése, illetve a háromszög menü elkészítése.
 
 ## 05.04
 - README.md elkezdése.
-- Trapéz menü elkezdése.
+- Trapéz menü elkészítése.
+
+## 05.09
+- Rombusz menü elkészítése
+
+## 05.10
+- Négyzet menü elkészítése
+
+## 05.17
+- README.md frissítése
+- Paralelogramma menü elkészítése
+- Téglalap menü elkészítése
+- Deltoid menü elkészítése
