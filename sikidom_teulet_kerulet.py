@@ -408,6 +408,7 @@ def paralelogrammakerulet():
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
     ablak3.mainloop()
+
 def teglalapterulet():
     
     s = ''
@@ -428,7 +429,7 @@ def teglalapterulet():
         mezo4.insert(0,str(terulet))
        
     ablak3 =Toplevel(foablak)
-    ablak3.title('háromszög terület számítás')
+    ablak3.title('Téglalap terület számítás')
     ablak3.minsize(width = 300, height = 100)
     szoveg1 = Label(ablak3, text = 'a(cm):')
     szoveg2 = Label(ablak3, text = 'b(cm):')
@@ -466,7 +467,7 @@ def teglalapkerulet():
         mezo4.insert(0,str(kerulet))
        
     ablak3 =Toplevel(foablak)
-    ablak3.title('háromszög terület számítás')
+    ablak3.title('Téglalap terület számítás')
     ablak3.minsize(width = 300, height = 100)
     szoveg1 = Label(ablak3, text = 'a(cm):')
     szoveg2 = Label(ablak3, text = 'b(cm):')
@@ -484,8 +485,81 @@ def teglalapkerulet():
     mezo4.grid(row = 5, column = 2, sticky = W)
     ablak3.mainloop()
 
+def deltoidterulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
 
 
+        a = eval(mezo1.get())
+        b = eval(mezo2.get())
+
+        terulet = 2*(a+b)
+
+        mezo4.delete(0, END)
+        mezo4.insert(0,str(terulet))
+       
+    ablak3 =Toplevel(foablak)
+    ablak3.title('Deltoid terület számítás')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'a(cm):')
+    szoveg2 = Label(ablak3, text = 'b(cm):')
+    szoveg4 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    mezo4 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 2)
+    szoveg4.grid(row = 5)
+    gomb1.grid(row = 4, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 2, column = 2, sticky = W)
+    mezo4.grid(row = 5, column = 2, sticky = W)
+    ablak3.mainloop()
+
+def deltoidkerulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
+
+        e = eval(mezo1.get())
+        f = eval(mezo2.get())
+
+        kerulet = (e*f)/2
+
+        mezo4.delete(0, END)
+        mezo4.insert(0,str(kerulet))
+       
+    ablak3 =Toplevel(foablak)
+    ablak3.title('Deltoid terület számítás')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'e(cm):')
+    szoveg2 = Label(ablak3, text = 'f(cm):')
+    szoveg4 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    mezo4 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 2)
+    szoveg4.grid(row = 5)
+    gomb1.grid(row = 4, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 2, column = 2, sticky = W)
+    mezo4.grid(row = 5, column = 2, sticky = W)
+    ablak3.mainloop()
 #file
 def nevjegy():
     ablak2 = Toplevel(foablak)
@@ -557,4 +631,12 @@ teglalap.add_command(label = 'Kerület', command = teglalapkerulet)
 menu7.config(menu = teglalap)
 #téglalap menü
 
+#deltoid menü
+menu8 = Menubutton(menusor, text = 'Deltoid')
+menu8.pack(side = LEFT)
+deltoid = Menu(menu8)
+deltoid.add_command(label = 'Terület', command = deltoidterulet)
+deltoid.add_command(label = 'Kerület', command = deltoidkerulet)
+menu8.config(menu = deltoid)
+#deltoid menü
 foablak.mainloop()
