@@ -333,6 +333,81 @@ def negyzetkerulet():
     mezo3.grid(row = 3, column = 2, sticky = W)
     ablak3.mainloop()
 
+def paralelogrammaterulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
+
+        a = eval(mezo1.get())
+        m = eval(mezo2.get())
+
+        terulet = a*m
+
+        mezo4.delete(0, END)
+        mezo4.insert(0,str(terulet))
+       
+    ablak3 =Toplevel(foablak)
+    ablak3.title('Paralelogramma terület számítás')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'a(cm):')
+    szoveg2 = Label(ablak3, text = 'magasság(cm):')
+    szoveg4 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    mezo4 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 2)
+    szoveg4.grid(row = 5)
+    gomb1.grid(row = 4, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 2, column = 2, sticky = W)
+    mezo4.grid(row = 5, column = 2, sticky = W)
+    ablak3.mainloop()
+
+def paralelogrammakerulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
+
+        a = eval(mezo1.get())
+        b = eval(mezo2.get())
+
+        kerulet = 2*(a+b)
+
+        mezo4.delete(0, END)
+        mezo4.insert(0,str(kerulet))
+       
+    ablak3 =Toplevel(foablak)
+    ablak3.title('Paralelogramma terület számítás')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'a(cm):')
+    szoveg2 = Label(ablak3, text = 'b(cm):')
+    szoveg4 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    mezo4 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 2)
+    szoveg4.grid(row = 5)
+    gomb1.grid(row = 4, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 2, column = 2, sticky = W)
+    mezo4.grid(row = 5, column = 2, sticky = W)
+    ablak3.mainloop()
 #file
 def nevjegy():
     ablak2 = Toplevel(foablak)
@@ -385,5 +460,14 @@ negyzet.add_command(label = 'Terület', command = negyzetterulet)
 negyzet.add_command(label = 'Kerület', command = negyzetkerulet)
 menu5.config(menu = negyzet)
 #négyzet menü
+
+#paralelogramma menü
+menu6 = Menubutton(menusor, text = 'Paralelogramma')
+menu6.pack(side = LEFT)
+paralelogramma = Menu(menu6)
+paralelogramma.add_command(label = 'Terület', command = paralelogrammaterulet)
+paralelogramma.add_command(label = 'Kerület', command = paralelogrammakerulet)
+menu6.config(menu = paralelogramma)
+#paralelogramma menü
 
 foablak.mainloop()
