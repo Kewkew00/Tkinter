@@ -11,7 +11,7 @@ menusor.pack(side = TOP, fill = X)
 
 
 def haromszogterulet():
-
+    
     s = ''
 
     def szamit():
@@ -25,6 +25,13 @@ def haromszogterulet():
         m = eval(mezo2.get())
 
         terulet = (a*m)/2
+
+        if a <= 0 or m <= 0:
+            mezo4.delete(0, END)
+            mezo4.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+        else:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str(terulet))
 
         mezo4.delete(0, END)
         mezo4.insert(0,str(terulet))
@@ -46,6 +53,13 @@ def haromszogterulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    #Háromszög rajz
+    c = Canvas(ablak3, width=120, height=125, bg="white")
+    c.create_polygon(65, 35, 45, 110, 80, 110, outline = "black", width=4 , fill = "white")
+    c.grid(row=1, column=4, rowspan=7)    
+    #Háromszög rajz
+
     ablak3.mainloop()
 
 def haromszogkerulet():
@@ -91,6 +105,13 @@ def haromszogkerulet():
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo3.grid(row = 3, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    #Háromszög rajz
+    c = Canvas(ablak3, width=120, height=125, bg="white")
+    c.create_polygon(65, 35, 45, 110, 80, 110, outline = "black", width=4 , fill = "white")
+    c.grid(row=1, column=4, rowspan=7)    
+    #Háromszög rajz
+
     ablak3.mainloop()
 
 def trapezterulet():
@@ -136,6 +157,15 @@ def trapezterulet():
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo3.grid(row = 3, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    trapez = Canvas(ablak3, width = 190, height = 150, bg = "white")
+    trapez.create_line(15, 125, 185, 125, fill="black", width = 1)
+    trapez.create_line(140, 50, 60, 50, fill = "black", width = 1)
+    trapez.create_line(15, 125, 60, 50, fill = "black")
+    trapez.create_line(185, 125, 140, 50, fill = "black")
+    trapez.create_line(100, 125, 100, 50, fill = "black", width = 1)
+    trapez.grid(column = 3, row = 1, rowspan = 8)
+
     ablak3.mainloop()
 
 def trapezkerulet():
@@ -186,6 +216,15 @@ def trapezkerulet():
     mezo3.grid(row = 3, column = 2, sticky = W)
     mezo5.grid(row = 4, column = 2, sticky = W)
     mezo4.grid(row = 6, column = 2, sticky = W)
+
+    trapez = Canvas(ablak3, width = 190, height = 150, bg = "white")
+    trapez.create_line(15, 125, 185, 125, fill="black", width = 1)
+    trapez.create_line(140, 50, 60, 50, fill = "black", width = 1)
+    trapez.create_line(15, 125, 60, 50, fill = "black")
+    trapez.create_line(185, 125, 140, 50, fill = "black")
+    trapez.create_line(100, 125, 100, 50, fill = "black", width = 1)
+    trapez.grid(column = 3, row = 1, rowspan = 8)
+
     ablak3.mainloop()
 
 def rombuszterulet():
@@ -221,11 +260,11 @@ def rombuszterulet():
     mezo3 = Entry(ablak3)
     szoveg1.grid(row = 1)
     szoveg2.grid(row = 2)
-    szoveg3.grid(row = 3)
-    gomb1.grid(row = 4, column = 2, sticky = W)
+    szoveg3.grid(row = 4)
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
-    mezo3.grid(row = 3, column = 2, sticky = W)
+    gomb1.grid(row = 3, column = 2, sticky = W)
+    mezo3.grid(row = 4, column = 2, sticky = W)
     ablak3.mainloop()
 
 def rombuszkerulet():
@@ -257,10 +296,10 @@ def rombuszkerulet():
     mezo1 = Entry(ablak3)
     mezo3 = Entry(ablak3)
     szoveg1.grid(row = 1)
-    szoveg3.grid(row = 3)
-    gomb1.grid(row = 4, column = 2, sticky = W)
+    szoveg3.grid(row = 4)
     mezo1.grid(row = 1, column = 2, sticky = W)
-    mezo3.grid(row = 3, column = 2, sticky = W)
+    gomb1.grid(row = 3, column = 2, sticky = W)
+    mezo3.grid(row = 4, column = 2, sticky = W)
     ablak3.mainloop()
 
 def negyzetterulet():
@@ -292,10 +331,10 @@ def negyzetterulet():
     mezo1 = Entry(ablak3)
     mezo3 = Entry(ablak3)
     szoveg1.grid(row = 1)
-    szoveg3.grid(row = 3)
-    gomb1.grid(row = 4, column = 2, sticky = W)
+    szoveg3.grid(row = 4)
     mezo1.grid(row = 1, column = 2, sticky = W)
-    mezo3.grid(row = 3, column = 2, sticky = W)
+    gomb1.grid(row = 3, column = 2, sticky = W)
+    mezo3.grid(row = 4, column = 2, sticky = W)
     ablak3.mainloop()
 
 def negyzetkerulet():
@@ -327,10 +366,10 @@ def negyzetkerulet():
     mezo1 = Entry(ablak3)
     mezo3 = Entry(ablak3)
     szoveg1.grid(row = 1)
-    szoveg3.grid(row = 3)
-    gomb1.grid(row = 4, column = 2, sticky = W)
+    szoveg3.grid(row = 4)
     mezo1.grid(row = 1, column = 2, sticky = W)
-    mezo3.grid(row = 3, column = 2, sticky = W)
+    gomb1.grid(row = 3, column = 2, sticky = W)
+    mezo3.grid(row = 4, column = 2, sticky = W)
     ablak3.mainloop()
 
 def paralelogrammaterulet():
