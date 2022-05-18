@@ -46,3 +46,8 @@
 - Paralelogramma menü elkészítése
 - Téglalap menü elkészítése
 - Deltoid menü elkészítése
+
+##05.18
+- README.md frissítése
+- Háromszög rajz beillesztése
+- Trapéz rajz beillesztése
