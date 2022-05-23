@@ -51,3 +51,9 @@
 - README.md frissítése
 - Háromszög rajz beillesztése
 - Trapéz rajz beillesztése
+
+##05.23
+- README.md frissítése
+- Kör menü elkészítése
+- Kör rajz elkészítése
+- Paralelogramma rajz elkészítése
