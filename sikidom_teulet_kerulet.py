@@ -408,6 +408,13 @@ def paralelogrammaterulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    c = Canvas(ablak3, width=150, height=150, bg="white")
+    c.create_polygon(65, 55, 37.5, 110, 110, 110, 135, 55, outline = "black", fill = "white")
+    c.create_line(65, 55, 37.5, 110, fill='black',)
+    c.create_line(65, 55, 135, 55, fill='black',)    
+    c.grid(row=1, column=4, rowspan=7)
+
     ablak3.mainloop()
 
 def paralelogrammakerulet():
@@ -446,6 +453,13 @@ def paralelogrammakerulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    c = Canvas(ablak3, width=150, height=150, bg="white")
+    c.create_polygon(65, 55, 37.5, 110, 110, 110, 135, 55, outline = "black", fill = "white")
+    c.create_line(65, 55, 37.5, 110, fill='black',)
+    c.create_line(65, 55, 135, 55, fill='black',)    
+    c.grid(row=1, column=4, rowspan=7)
+
     ablak3.mainloop()
 
 def teglalapterulet():
