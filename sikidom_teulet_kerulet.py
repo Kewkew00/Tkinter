@@ -3,7 +3,7 @@ import math
 #főablak
 foablak = Tk()
 foablak.title('Síkidom terület és kerület számítás')
-foablak.minsize(width = 500, height = 100)
+foablak.minsize(width = 600, height = 100)
 #főablak
 
 menusor = Frame(foablak)
@@ -563,7 +563,7 @@ def deltoidterulet():
     ablak3.mainloop()
 
 def deltoidkerulet():
-    
+
     s = ''
 
     def szamit():
@@ -599,6 +599,101 @@ def deltoidkerulet():
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
     ablak3.mainloop()
+
+def korterulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
+
+        r = eval(mezo2.get())
+
+        terulet = math.pi*(r*r)
+
+        if r <= 0:
+            mezo4.delete(0, END)
+            mezo4.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+        else:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str(terulet))
+
+        mezo4.delete(0, END)
+        mezo4.insert(0,str(terulet))
+       
+    ablak3 =Toplevel(foablak)
+    ablak3.title('háromszög terület számítás')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'r(cm):')
+    szoveg2 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 3)
+    gomb1.grid(row = 2, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 3, column = 2, sticky = W)
+
+    #Kör rajz
+    c = Canvas(ablak3, width=120, height=120, bg="white")
+    c.create_oval(30,30,105,105, fill='black')
+    c.grid(row=1, column=4, rowspan=7)
+    #Kör rajz
+
+    ablak3.mainloop()
+
+def korkerulet():
+    
+    s = ''
+
+    def szamit():
+
+        if not s:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+
+
+        r = eval(mezo2.get())
+
+        terulet = 2*math.pi*r
+
+        if r <= 0:
+            mezo4.delete(0, END)
+            mezo4.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+        else:
+            mezo4.delete(0, END)
+            mezo4.insert(0, str(terulet))
+
+        mezo4.delete(0, END)
+        mezo4.insert(0,str(terulet))
+       
+    ablak3 =Toplevel(foablak)
+    ablak3.title('háromszög terület számítás')
+    ablak3.minsize(width = 300, height = 100)
+    szoveg1 = Label(ablak3, text = 'r(cm):')
+    szoveg2 = Label(ablak3, text = 'Eredmény: ')
+    gomb1 = Button(ablak3,  text = 'Számítás', command = szamit)
+    mezo1 = Entry(ablak3)
+    mezo2 = Entry(ablak3)
+    szoveg1.grid(row = 1)
+    szoveg2.grid(row = 3)
+    gomb1.grid(row = 2, column = 2, sticky = W)
+    mezo1.grid(row = 1, column = 2, sticky = W)
+    mezo2.grid(row = 3, column = 2, sticky = W)
+
+    #Kör rajz
+    c = Canvas(ablak3, width=120, height=120, bg="white")
+    c.create_oval(30,30,105,105, fill='black')
+    c.grid(row=1, column=4, rowspan=7)
+    #Kör rajz
+
+    ablak3.mainloop()
+
 #file
 def nevjegy():
     ablak2 = Toplevel(foablak)
@@ -678,4 +773,14 @@ deltoid.add_command(label = 'Terület', command = deltoidterulet)
 deltoid.add_command(label = 'Kerület', command = deltoidkerulet)
 menu8.config(menu = deltoid)
 #deltoid menü
+
+#kor menü
+menu8 = Menubutton(menusor, text = 'Kör')
+menu8.pack(side = LEFT)
+kor = Menu(menu8)
+kor.add_command(label = 'Terület', command = korterulet)
+kor.add_command(label = 'Kerület', command = korkerulet)
+menu8.config(menu = kor)
+#kor menü
+
 foablak.mainloop()
