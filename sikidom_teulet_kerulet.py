@@ -574,6 +574,12 @@ def deltoidterulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    c = Canvas(ablak3, width=110, height=110)
+    c.create_polygon(25,42.5,62.5,5,100,40,62.5,87.5, fill="white", outline = 'black')
+    c.create_line(25,42.5,62.5,5, fill="black",)
+    c.grid(row = 2, column = 4, rowspan=7,)
+    
     ablak3.mainloop()
 
 def deltoidkerulet():
@@ -612,6 +618,12 @@ def deltoidkerulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    c = Canvas(ablak3, width=110, height=110)
+    c.create_polygon(25,42.5,62.5,5,100,40,62.5,87.5, fill="white", outline = 'black')
+    c.create_line(25,42.5,62.5,5, fill="black",)
+    c.grid(row = 2, column = 4, rowspan=7,)
+
     ablak3.mainloop()
 
 def korterulet():
