@@ -47,12 +47,12 @@
 - Téglalap menü elkészítése
 - Deltoid menü elkészítése
 
-##05.18
+## 05.18
 - README.md frissítése
 - Háromszög rajz beillesztése
 - Trapéz rajz beillesztése
 
-##05.23
+## 05.23
 - README.md frissítése
 - Kör menü elkészítése
 - Kör rajz elkészítése
