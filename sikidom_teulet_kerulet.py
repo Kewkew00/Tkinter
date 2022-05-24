@@ -238,7 +238,7 @@ def rombuszterulet():
             mezo3.insert(0, str()+ 'A számításhoz számadat kell')
 
         a = eval(mezo1.get())
-        m = eval(mezo3.get())
+        m = eval(mezo2.get())
         terulet = a*m
 
         if a <= 0 or m <= 0:
@@ -536,6 +536,7 @@ def teglalapkerulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
     ablak3.mainloop()
 
 def deltoidterulet():
@@ -579,7 +580,7 @@ def deltoidterulet():
     c.create_polygon(25,42.5,62.5,5,100,40,62.5,87.5, fill="white", outline = 'black')
     c.create_line(25,42.5,62.5,5, fill="black",)
     c.grid(row = 2, column = 4, rowspan=7,)
-    
+
     ablak3.mainloop()
 
 def deltoidkerulet():
@@ -633,26 +634,22 @@ def korterulet():
     def szamit():
 
         if not s:
-            mezo4.delete(0, END)
-            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
-
-
-        r = eval(mezo2.get())
+            mezo2.delete(0, END)
+            mezo2.insert(0, str()+ 'A számításhoz számadat kell')
+        
+        r = eval(mezo1.get())
 
         terulet = math.pi*(r*r)
 
         if r <= 0:
-            mezo4.delete(0, END)
-            mezo4.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+            mezo2.delete(0, END)
+            mezo2.insert(0,str()+ 'Negatív számmal nem lehet számolni')
         else:
-            mezo4.delete(0, END)
-            mezo4.insert(0, str(terulet))
+            mezo2.delete(0, END)
+            mezo2.insert(0, str(round(terulet)))
 
-        mezo4.delete(0, END)
-        mezo4.insert(0,str(terulet))
-       
     ablak3 =Toplevel(foablak)
-    ablak3.title('háromszög terület számítás')
+    ablak3.title('Kör terület számítás')
     ablak3.minsize(width = 300, height = 100)
     szoveg1 = Label(ablak3, text = 'r(cm):')
     szoveg2 = Label(ablak3, text = 'Eredmény: ')
@@ -680,26 +677,26 @@ def korkerulet():
     def szamit():
 
         if not s:
-            mezo4.delete(0, END)
-            mezo4.insert(0, str()+ 'A számításhoz számadat kell')
+            mezo2.delete(0, END)
+            mezo2.insert(0, str()+ 'A számításhoz számadat kell')
 
 
-        r = eval(mezo2.get())
+        r = eval(mezo1.get())
 
         terulet = 2*math.pi*r
 
         if r <= 0:
-            mezo4.delete(0, END)
-            mezo4.insert(0,str()+ 'Negatív számmal nem lehet számolni')
+            mezo2.delete(0, END)
+            mezo2.insert(0,str()+ 'Negatív számmal nem lehet számolni')
         else:
-            mezo4.delete(0, END)
-            mezo4.insert(0, str(terulet))
+            mezo2.delete(0, END)
+            mezo2.insert(0, str(round(terulet)))
 
-        mezo4.delete(0, END)
-        mezo4.insert(0,str(terulet))
+        mezo2.delete(0, END)
+        mezo2.insert(0,str(round(terulet)))
        
     ablak3 =Toplevel(foablak)
-    ablak3.title('háromszög terület számítás')
+    ablak3.title('Kör kerülek számítás')
     ablak3.minsize(width = 300, height = 100)
     szoveg1 = Label(ablak3, text = 'r(cm):')
     szoveg2 = Label(ablak3, text = 'Eredmény: ')
