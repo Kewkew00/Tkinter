@@ -265,6 +265,14 @@ def rombuszterulet():
     mezo2.grid(row = 2, column = 2, sticky = W)
     gomb1.grid(row = 3, column = 2, sticky = W)
     mezo3.grid(row = 4, column = 2, sticky = W)
+
+    #Rombusz rajz
+    c = Canvas(ablak3, width=210, height=170)
+    c.create_polygon(50,85,125,10,200,85,125,160, fill="white", outline = 'black')
+    c.create_line(50,85,125,10, fill="black", width=3)
+    c.grid(column = 3, row = 1, rowspan = 8)
+    #Rombusz rajz
+
     ablak3.mainloop()
 
 def rombuszkerulet():
@@ -300,6 +308,14 @@ def rombuszkerulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     gomb1.grid(row = 3, column = 2, sticky = W)
     mezo3.grid(row = 4, column = 2, sticky = W)
+
+    #Rombusz rajz
+    c = Canvas(ablak3, width=210, height=170)
+    c.create_polygon(50,85,125,10,200,85,125,160, fill="white", outline = 'black')
+    c.create_line(50,85,125,10, fill="black", width=3)
+    c.grid(column = 3, row = 1, rowspan = 8)
+    #Rombusz rajz
+
     ablak3.mainloop()
 
 def negyzetterulet():
