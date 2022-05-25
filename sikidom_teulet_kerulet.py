@@ -512,6 +512,11 @@ def teglalapterulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    c = Canvas(ablak3, width=100, height=100, bg="white")
+    c.create_rectangle(10, 30, 93, 80,outline="black", fill="white")
+    c.grid(row=1, column=4, rowspan=7)
+
     ablak3.mainloop()
 
 def teglalapkerulet():
@@ -550,6 +555,10 @@ def teglalapkerulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     mezo2.grid(row = 2, column = 2, sticky = W)
     mezo4.grid(row = 5, column = 2, sticky = W)
+
+    c = Canvas(ablak3, width=100, height=100, bg="white")
+    c.create_rectangle(10, 30, 93, 80,outline="black", fill="white")
+    c.grid(row=1, column=4, rowspan=7)
 
     ablak3.mainloop()
 
