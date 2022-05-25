@@ -335,6 +335,13 @@ def negyzetterulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     gomb1.grid(row = 3, column = 2, sticky = W)
     mezo3.grid(row = 4, column = 2, sticky = W)
+
+    #Négyzet rajz
+    c = Canvas(ablak3, width=120, height=125, bg="white")
+    c.create_rectangle(30, 30, 100, 100, outline = "black", width=4 , fill = "white")
+    c.grid(row=1, column=4, rowspan=7)    
+    #Négyzet rajz
+
     ablak3.mainloop()
 
 def negyzetkerulet():
@@ -370,6 +377,13 @@ def negyzetkerulet():
     mezo1.grid(row = 1, column = 2, sticky = W)
     gomb1.grid(row = 3, column = 2, sticky = W)
     mezo3.grid(row = 4, column = 2, sticky = W)
+
+    #Négyzet rajz
+    c = Canvas(ablak3, width=120, height=125, bg="white")
+    c.create_rectangle(30, 30, 100, 100, outline = "black", width=4 , fill = "white")
+    c.grid(row=1, column=4, rowspan=7)    
+    #Négyzet rajz
+
     ablak3.mainloop()
 
 def paralelogrammaterulet():
