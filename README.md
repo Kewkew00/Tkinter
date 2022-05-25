@@ -57,3 +57,14 @@
 - Kör menü elkészítése
 - Kör rajz elkészítése
 - Paralelogramma rajz elkészítése
+
+## 05.24
+- Deltoid rajz feltöltése
+- Körben talált mini hibák fixálása
+- README.md mini hibák fixelése
+
+## 05.25
+- Négyzet rajz elkészítése
+- Téglalap rajz elkészítése
+- Rombusz rajz elkészítése
+- README.md frissítése
